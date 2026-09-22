@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 0     | 0    | 0      | 0    |
+| 1     | 1    | 0      | 0    |
 
 ---
 
@@ -14,7 +14,7 @@
 
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
-|   |       |            |        |      |        |
+| 1768 | Merge Strings Alternately | Easy | Two Pointers, String | 30 min | ✅ |
 
 ---
 
