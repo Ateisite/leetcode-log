@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 1     | 1    | 0      | 0    |
+| 2     | 2    | 0      | 0    |
+
+---
+
+## 2026-09-23
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 389 | Find the Difference | Easy | String, Hash Table | 30 min | ⬜ |
 
 ---
 

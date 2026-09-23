@@ -38,7 +38,7 @@ string is exhausted, the `if` check fails and it is automatically skipped.
 
 
 
-def merge_alternately(word1,word2):
+def mergeAlternately(word1,word2):
     i = 0
     result = ""
     for i in range(max(len(word1),len(word2))):
