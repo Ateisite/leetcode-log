@@ -16,11 +16,15 @@ Include: what it asks, input/output format, constraints, examples.
 ## Complexity
 - Time: O(?)
 - Space: O(?)
+
+## Submission Log
+- [ ] Submitted on LeetCode
+- [ ] Passed all test cases
 """
 
 
 # ============================================================
-# LeetCode Submission (copy this block to LeetCode)
+# LeetCode Submission (copy entire block to LeetCode)
 # ============================================================
 
 class Solution:
@@ -31,20 +35,3 @@ class Solution:
         """
         # Your code here
         pass
-
-
-# ============================================================
-# Local Test (run: python solutions/XXXX_xxx.py)
-# ============================================================
-
-def [method_name]([PARAMS]):
-    """Standalone version for local testing."""
-    sol = Solution()
-    return sol.[METHOD_NAME]([PARAMS])
-
-
-if __name__ == "__main__":
-    assert [method_name]([INPUT_1]) == [EXPECTED_1], "Test 1 failed"
-    assert [method_name]([INPUT_2]) == [EXPECTED_2], "Test 2 failed"
-    assert [method_name]([INPUT_3]) == [EXPECTED_3], "Test 3 failed"
-    print("✅ All tests passed!")

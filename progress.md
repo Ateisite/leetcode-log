@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 2     | 2    | 0      | 0    |
+| 3     | 3    | 0      | 0    |
+
+---
+
+## 2026-09-24
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 28 | Find the Index of the First Occurrence | Easy | String, Two Pointers | 20 min | ✅ |
 
 ---
 
