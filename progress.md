@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 3     | 3    | 0      | 0    |
+| 4     | 4    | 0      | 0    |
+
+---
+
+## 2026-09-25
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 242 | Valid Anagram | Easy | String, Hash Table | 25 min | ✅ |
 
 ---
 
