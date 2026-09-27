@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 5     | 5    | 0      | 0    |
+| 6     | 6    | 0      | 0    |
+
+---
+
+## 2026-09-27
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 283 | Move Zeroes | Easy | Array, Two Pointers | 30 min | ✅ |
 
 ---
 
