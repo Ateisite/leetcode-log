@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 7     | 7    | 0      | 0    |
+| 8     | 8    | 0      | 0    |
+
+---
+
+## 2026-09-29
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 1822 | Sign of the Product of an Array | Easy | Array, Math | 15 min | ✅ |
 
 ---
 
