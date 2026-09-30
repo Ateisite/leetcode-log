@@ -51,13 +51,15 @@ cd "E:\02_Learning\Programming\LeetCode"
 
 ```
 LeetCode/
-├── 刷题笔记.md      ← 技巧、踩坑记录、算法模式
 ├── progress.md      ← 每日进度日志
 ├── solutions/       ← 每道题一个文件
 │   ├── 0000template.py
 │   ├── 0001XXX.py
 │   └── ...
 └── CLAUDE.md        ← 本文件
+
+笔记文件（Obsidian vault）：
+E:\03_Notes\Charlie_vault\Knowledge\LeetCode\编程基础 0 到 1(50t).md
 ```
 
 ## 常见错误速查
@@ -70,4 +72,4 @@ LeetCode/
 | 中文冒号 `：` | 英文冒号 `:` |
 | `return False` 在循环内 | 循环结束后再 `return False` |
 
-详见 刷题笔记.md。
+详见笔记文件。
