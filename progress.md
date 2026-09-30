@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 8     | 8    | 0      | 0    |
+| 9     | 9    | 0      | 0    |
+
+---
+
+## 2026-09-30
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 1502 | Can Make Arithmetic Progression | Easy | Array, Sorting | 20 min | ✅ |
 
 ---
 
