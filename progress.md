@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 9     | 9    | 0      | 0    |
+| 10    | 10   | 0      | 0    |
+
+---
+
+## 2026-10-01
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 896 | Monotonic Array | Easy | Array | 25 min | ✅ |
 
 ---
 
