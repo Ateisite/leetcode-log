@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 10    | 10   | 0      | 0    |
+| 11    | 11   | 0      | 0    |
+
+---
+
+## 2026-10-02
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 13 | Roman to Integer | Easy | Hash Table, String | 30 min | ✅ |
 
 ---
 
