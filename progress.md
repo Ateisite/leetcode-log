@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 11    | 11   | 0      | 0    |
+| 12    | 12   | 0      | 0    |
+
+---
+
+## 2026-10-03
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 58 | Length of Last Word | Easy | String | 10 min | ✅ |
 
 ---
 
