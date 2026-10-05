@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 13    | 13   | 0      | 0    |
+| 14    | 14   | 0      | 0    |
+
+---
+
+## 2026-10-05
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 682 | Baseball Game | Easy | Array, Stack | 35 min | ✅ |
 
 ---
 
