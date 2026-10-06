@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 14    | 14   | 0      | 0    |
+| 15    | 15   | 0      | 0    |
+
+---
+
+## 2026-10-06
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 657 | Robot Return to Origin | Easy | String, Simulation | 15 min | ✅ |
 
 ---
 
