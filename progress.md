@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 15    | 15   | 0      | 0    |
+| 16    | 16   | 0      | 0    |
+
+---
+
+## 2026-10-07
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 1275 | Find Winner on a Tic Tac Toe Game | Easy | Array, Matrix | 40 min | ✅ |
 
 ---
 
