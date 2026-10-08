@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 16    | 16   | 0      | 0    |
+| 17    | 16   | 1      | 0    |
+
+---
+
+## 2026-10-08
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 1041 | Robot Bounded In Circle | Medium | Math, Simulation | 45 min | ✅ |
 
 ---
 
