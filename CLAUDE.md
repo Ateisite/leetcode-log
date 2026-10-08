@@ -11,7 +11,7 @@
 
 ## 当前进度
 
-已完成 8 题（全部 Easy），详见 progress.md。
+已完成 17 题（16 Easy, 1 Medium），详见 progress.md。
 
 ## 每日刷题流程
 
@@ -21,7 +21,8 @@
 4. 用户去 LeetCode 提交验证
 5. 通过后回填：Idea（英文）、Complexity、Submission Log、Time spent
 6. 更新 progress.md
-7. git add → commit → push
+7. 更新笔记文件 `E:\03_Notes\Charlie_vault\Knowledge\LeetCode\编程基础 0 到 1(50t).md`
+8. git add → commit → push
 
 ## Commit 格式
 
@@ -40,9 +41,16 @@ cd "E:\02_Learning\Programming\LeetCode"
 "E:\06_Software\Git\cmd\git.exe" push
 ```
 
+**代理**：Clash Verge，端口 7897
+```bash
+"E:\06_Software\Git\cmd\git.exe" config --global http.proxy http://127.0.0.1:7897
+"E:\06_Software\Git\cmd\git.exe" config --global https.proxy http://127.0.0.1:7897
+```
+
 ## 用户偏好
 
 - **不要代写代码**：用户是初学者，需要自己思考。可以给提示、解释概念、指出错误，但代码必须用户自己写
+- **用户想先自己尝试**：先不给思路提示，等用户问或卡住再给适度引导
 - Idea 部分用英文
 - 用户是跨专业（风景园林 → AI），Python 基础薄弱，解释概念时要从基础讲起
 - 用户习惯用中文交流
