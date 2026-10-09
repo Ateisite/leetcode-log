@@ -11,7 +11,7 @@
 
 ## 当前进度
 
-已完成 17 题（16 Easy, 1 Medium），详见 progress.md。
+已完成 18 题（17 Easy, 1 Medium），详见 progress.md。
 
 ## 每日刷题流程
 
@@ -20,7 +20,7 @@
 3. 用户自己写代码（**不要代写**，只给提示）
 4. 用户去 LeetCode 提交验证
 5. 通过后回填：Idea（英文）、Complexity、Submission Log、Time spent
-6. 更新 progress.md
+6. 更新 progress.md，CLAUDE.md
 7. 更新笔记文件 `E:\03_Notes\Charlie_vault\Knowledge\LeetCode\编程基础 0 到 1(50t).md`
 8. git add → commit → push
 

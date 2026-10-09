@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 17    | 16   | 1      | 0    |
+| 18    | 17   | 1      | 0    |
 
 ---
 
@@ -14,6 +14,7 @@
 
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
+| 1672 | Richest Customer Wealth | Easy | Array, Matrix | 20 min | ✅ |
 | 1041 | Robot Bounded In Circle | Medium | Math, Simulation | 45 min | ✅ |
 
 ---
