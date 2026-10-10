@@ -6,7 +6,13 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 18    | 17   | 1      | 0    |
+| 19    | 18   | 1      | 0    |
+
+## 2026-10-10
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 1572 | Diagonal Sum | Easy | Array, Matrix | 25 min | ✅ |
 
 ---
 
