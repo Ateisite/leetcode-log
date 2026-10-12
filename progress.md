@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 20    | 18   | 2      | 0    |
+| 21    | 18   | 3      | 0    |
+
+## 2026-10-12
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 73 | Set Matrix Zeroes | Medium | Array, Matrix | 20 min | ✅ |
+
+---
 
 ## 2026-10-11
 
