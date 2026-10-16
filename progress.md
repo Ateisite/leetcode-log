@@ -6,7 +6,16 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 23    | 20   | 3      | 0    |
+| 25    | 22   | 3      | 0    |
+
+---
+
+## 2026-10-16
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 976 | Largest Perimeter Triangle | Easy | Array, Math, Sorting | 15 min | ✅ |
+| 860 | Lemonade Change | Easy | Array, Greedy | 20 min | ✅ |
 
 ## 2026-10-15
 
