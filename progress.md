@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 25    | 22   | 3      | 0    |
+| 26    | 23   | 3      | 0    |
+
+---
+
+## 2026-10-17
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 1232 | Check If It Is a Straight Line | Easy | Array, Math, Geometry | 25 min | ✅ |
 
 ---
 
