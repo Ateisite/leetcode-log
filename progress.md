@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 26    | 23   | 3      | 0    |
+| 27    | 24   | 3      | 0    |
+
+---
+
+## 2026-10-18
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 67 | Add Binary | Easy | String, Math | 30 min | ✅ |
 
 ---
 
