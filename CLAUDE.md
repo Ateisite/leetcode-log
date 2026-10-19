@@ -11,7 +11,7 @@
 
 ## 当前进度
 
-已完成 27 题（24 Easy, 3 Medium），详见 progress.md。
+已完成 28 题（24 Easy, 4 Medium），详见 progress.md。
 
 ## 每日刷题流程
 
