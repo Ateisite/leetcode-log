@@ -11,7 +11,7 @@
 
 ## 当前进度
 
-已完成 28 题（24 Easy, 4 Medium），详见 progress.md。
+已完成 29 题（24 Easy, 5 Medium），详见 progress.md。
 
 ## 每日刷题流程
 
@@ -41,11 +41,7 @@ cd "E:\02_Learning\Programming\LeetCode"
 "E:\06_Software\Git\cmd\git.exe" push
 ```
 
-**代理**：Clash Verge，端口 7897
-```bash
-"E:\06_Software\Git\cmd\git.exe" config --global http.proxy http://127.0.0.1:7897
-"E:\06_Software\Git\cmd\git.exe" config --global https.proxy http://127.0.0.1:7897
-```
+**代理**：不需要代理，直连即可
 
 ## 用户偏好
 

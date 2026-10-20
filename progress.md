@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 28    | 24   | 4      | 0    |
+| 29    | 24   | 5      | 0    |
+
+---
+
+## 2026-10-20
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 50 | Pow(x, n) | Medium | Math, Binary Search | 40 min | ✅ |
 
 ---
 
