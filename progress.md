@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 29    | 24   | 5      | 0    |
+| 30    | 25   | 5      | 0    |
+
+---
+
+## 2026-10-21
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 21 | Merge Two Sorted Lists | Easy | Linked List, Two Pointers | 30 min | ✅ |
 
 ---
 
