@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 30    | 25   | 5      | 0    |
+| 31    | 26   | 5      | 0    |
+
+---
+
+## 2026-10-22
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 206 | Reverse Linked List | Easy | Linked List | 20 min | ✅ |
 
 ---
 
