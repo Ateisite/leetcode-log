@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 31    | 26   | 5      | 0    |
+| 32    | 26   | 6      | 0    |
+
+---
+
+## 2026-10-23
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 2 | Add Two Numbers | Medium | Linked List, Math | 30 min | ✅ |
 
 ---
 
