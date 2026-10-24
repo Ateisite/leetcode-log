@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 32    | 26   | 6      | 0    |
+| 33    | 26   | 7      | 0    |
+
+---
+
+## 2026-10-24
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 445 | Add Two Numbers II | Medium | Linked List, Math, Stack | 25 min | ✅ |
 
 ---
 

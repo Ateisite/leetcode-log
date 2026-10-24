@@ -11,11 +11,11 @@
 
 ## 当前进度
 
-已完成 32 题（26 Easy, 6 Medium），详见 progress.md。
+已完成 33 题（26 Easy, 7 Medium），详见 progress.md。
 
 ## 每日刷题流程
 
-1. 从 `solutions/0000template.py` 复制，命名为 `00XX题目名.py`
+1. 从 `solutions/0000template.py` 复制，命名为 `00XX题目名.py`（XX = 第几道做的题，不是题号。例：第33道题 #445 → `0033AddTwoNumbersII.py`）
 2. 粘贴题目描述到文件头部注释
 3. 用户自己写代码（**不要代写**，只给提示）
 4. 用户去 LeetCode 提交验证
