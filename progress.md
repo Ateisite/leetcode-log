@@ -6,7 +6,15 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 33    | 26   | 7      | 0    |
+| 34    | 27   | 7      | 0    |
+
+---
+
+## 2026-10-25
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 144 | Binary Tree Preorder Traversal | Easy | Binary Tree, DFS | 25 min | ✅ |
 
 ---
 
