@@ -10,6 +10,14 @@
 
 ---
 
+## 2026-10-25
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 144 | Binary Tree Preorder Traversal | Easy | Binary Tree, DFS | 25 min | ✅ |
+
+---
+
 ## 2026-10-26
 
 | # | Title | Difficulty | Topics | Time | Status |
