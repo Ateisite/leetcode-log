@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 35    | 28   | 7      | 0    |
+| 36    | 29   | 7      | 0    |
 
 ---
 
@@ -23,6 +23,14 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 145 | Binary Tree Postorder Traversal | Easy | Binary Tree, DFS | 15 min | ✅ |
+
+---
+
+## 2026-10-27
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 94 | Binary Tree Inorder Traversal | Easy | Binary Tree, DFS | 10 min | ✅ |
 
 ---
 
