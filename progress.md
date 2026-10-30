@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 38    | 29   | 9      | 0    |
+| 39    | 29   | 10     | 0    |
 
 ---
 
@@ -47,6 +47,14 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 107 | Binary Tree Level Order Traversal II | Medium | Binary Tree, BFS, Queue | 15 min | ✅ |
+
+---
+
+## 2026-10-31
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 199 | Binary Tree Right Side View | Medium | Binary Tree, BFS | 10 min | ✅ |
 
 ---
 
