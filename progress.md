@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 39    | 29   | 10     | 0    |
+| 40    | 30   | 10     | 0    |
 
 ---
 
@@ -55,6 +55,14 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 199 | Binary Tree Right Side View | Medium | Binary Tree, BFS | 10 min | ✅ |
+
+---
+
+## 2026-10-31
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 637 | Average of Levels in Binary Tree | Easy | Binary Tree, BFS | 15 min | ✅ |
 
 ---
 
