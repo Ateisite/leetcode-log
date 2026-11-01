@@ -1,4 +1,4 @@
-"""
+ """
 复习默写 — 白纸写，不看笔记
 写完让 Claude 对照
 
@@ -162,28 +162,140 @@ class Solution(object):
         result = self.reverseList(self.addTwoNumbers1(l1,l2))
         return result
 
+# === 第7题：二叉树前序遍历（#144） ===
+# 题目：根→左→右，返回节点值列表
+# 易错点：
+#   - 嵌套函数共享外层 result 列表
+#   - append 在递归左、右之间（最前面）
+#   - 基准：if not node: return
+
 class Solution(object):
     def preorderTraversal(self, root):
         result  = []
         def dfs(node):
             if not node:
-                return result
+                return
             result.append(node.val)
             dfs(node.left)
             dfs(node.right)
         dfs(root)
         return result
+
+# === 第8题：二叉树后序遍历（#145） ===
+# 题目：左→右→根，返回节点值列表
+# 易错点：
+#   - append 在最后（递归左、右之后）
+#   - 嵌套函数不要加 self
 
 class Solution(object):
     def postorderTraversal(self,root):
         result = []
         def dfs(node):
             if not node:
-                return result
+                return
             dfs(node.left)
             dfs(node.right)
             result.append(node.val)
         dfs(root)
         return result
 
+# === 第9题：快速幂（#50） ===
+# 题目：计算 x^n，n 可能为负数
+# 易错点：
+#   - 用 abs(n) 做循环，最后再取倒数
+#   - m%2==1 时乘到 result
 
+class Solution(object):
+    def myPow(self,x,n):
+        result = 1
+        m = abs(n)
+        while m > 0:
+            if m % 2 ==1:
+                result *= x
+            x *= x
+            m = m // 2
+        return result if n > 0 else 1/result
+
+# === 第10题：两数相加（#2） ===
+# 题目：两个逆序链表相加，返回和的链表
+# 易错点：
+#   - total = v1 + v2 + carry（用 carry，不是上一轮的 total）
+#   - current.next = ListNode(...)，不是 current = ListNode(...)
+
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        dummy = ListNode()
+        current = dummy
+        carry = 0
+        while l1 or l2 or carry:
+            v1 = l1.val if l1 else 0
+            v2 = l2.val if l2 else 0
+            total = v1 + v2 + carry
+            current.next = ListNode(total%10)
+            carry = total // 10
+            current = current.next
+            if l1:
+                l1 = l1.next
+            if l2:
+                l2 = l2.next
+        return dummy.next
+
+# === 第11题：二叉树层序遍历（#102） ===
+# 题目：从上到下、从左到右，按层返回节点值（二维列表）
+# 易错点：
+#   - from collections import deque
+#   - deque([root]) 要加中括号
+#   - size = len(queue) 在 for 外记录
+#   - popleft() 不是 pop()
+#   - 空树返回 []
+from collections import deque
+class Solution(object):
+    def levelOrder(self, root):
+        result = []
+        if not root:
+            return result
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level)
+        return result
+        
+
+# === 第12题：二叉树右视图（#199） ===
+# 题目：站在二叉树右边看，能看到的节点值（从上到下）
+# 易错点：
+#   - 层序遍历每层取 level[-1]
+#   - 空树返回 []
+
+
+from collections import deque
+class Solution(object):
+    def levelOrder(self, root):
+        result = []
+        if not root:
+            return result
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level[-1])
+        return result

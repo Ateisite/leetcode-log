@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 40    | 30   | 10     | 0    |
+| 41    | 30   | 11     | 0    |
 
 ---
 
@@ -63,6 +63,14 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 637 | Average of Levels in Binary Tree | Easy | Binary Tree, BFS | 15 min | ✅ |
+
+---
+
+## 2026-11-01
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 429 | N-ary Tree Level Order Traversal | Medium | Binary Tree, BFS, Queue | 10 min | ✅ |
 
 ---
 
