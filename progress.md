@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 41    | 30   | 11     | 0    |
+| 42    | 30   | 12     | 0    |
 
 ---
 
@@ -71,6 +71,14 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 429 | N-ary Tree Level Order Traversal | Medium | Binary Tree, BFS, Queue | 10 min | ✅ |
+
+---
+
+## 2026-11-02
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 515 | Find Largest Value in Each Tree Row | Medium | Binary Tree, BFS | 10 min | ✅ |
 
 ---
 

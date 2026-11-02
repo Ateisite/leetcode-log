@@ -299,3 +299,25 @@ class Solution(object):
                     queue.append(node.right)
             result.append(level[-1])
         return result
+
+# === 第13题：二叉树层序遍历II（#107） ===
+# 题目：层序遍历，结果从下到上
+# 易错点：
+#   - 方法名是 levelOrderBottom
+#   - result.reverse() 返回 None，要先调用再 return
+
+class Solution(object):
+    def levelOrderBottom(self, root):
+        
+
+# === 第14题：二叉树层平均值（#637） ===
+# 题目：每层节点的平均值
+# 易错点：
+#   - popleft() 别忘括号
+#   - 除以 len(level) 不是 len(queue)
+#   - Python 2 整数除法问题（选 Python 3 提交）
+
+class Solution(object):
+    def averageOfLevels(self, root):
+        # 在这里从零写 averageOfLevels
+        pass
