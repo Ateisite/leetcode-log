@@ -305,10 +305,28 @@ class Solution(object):
 # 易错点：
 #   - 方法名是 levelOrderBottom
 #   - result.reverse() 返回 None，要先调用再 return
-
+from collections import deque
 class Solution(object):
     def levelOrderBottom(self, root):
-        
+        result = []
+        if not root:
+            return result
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level =[]
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level)
+        result.reverse()
+        return result
 
 # === 第14题：二叉树层平均值（#637） ===
 # 题目：每层节点的平均值
@@ -316,8 +334,76 @@ class Solution(object):
 #   - popleft() 别忘括号
 #   - 除以 len(level) 不是 len(queue)
 #   - Python 2 整数除法问题（选 Python 3 提交）
-
+from collections import deque
 class Solution(object):
     def averageOfLevels(self, root):
-        # 在这里从零写 averageOfLevels
-        pass
+        result = []
+        if not root:
+            return result
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level =[]
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            average = sum(level)/len(level)
+            result.append(average)
+        return result
+
+# === 第15题：N叉树层序遍历（#429） ===
+# 题目：N叉树按层返回节点值
+# 易错点：
+#   - 用 for child in node.children，不是 left/right
+#   - 空树返回 []
+from collections import deque
+class Solution(object):
+    def levelOrder(self, root):
+        result = []
+        if not root:
+            return result
+        queue = deque()
+        queue.append(root)
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                for child in node.children:
+                    queue.append(child)
+            result.append(level)
+        return result
+
+# === 第16题：每行最大值（#515） ===
+# 题目：每层节点中的最大值
+# 易错点：
+#   - max(level) 取最大值
+#   - 空树返回 []
+from collections import deque
+class Solution(object):
+    def largestValues(self, root):
+        result = []
+        if not root:
+            return result
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level =[]
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(max(level))
+        return result

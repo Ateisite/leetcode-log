@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 42    | 30   | 12     | 0    |
+| 43    | 30   | 13     | 0    |
 
 ---
 
@@ -79,6 +79,14 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 515 | Find Largest Value in Each Tree Row | Medium | Binary Tree, BFS | 10 min | ✅ |
+
+---
+
+## 2026-11-03
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 116 | Populating Next Right Pointers in Each Node | Medium | Binary Tree, BFS | 25 min | ✅ |
 
 ---
 
