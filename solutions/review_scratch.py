@@ -407,3 +407,28 @@ class Solution(object):
                     queue.append(node.right)
             result.append(max(level))
         return result
+
+# === 第17题：填充next指针（#116） ===
+# 题目：完美二叉树，每个节点的 next 指向同层右边的节点
+# 易错点：
+#   - level 存节点，不是值（level.append(node)）
+#   - for i in range(len(level)-1): level[i].next = level[i+1]
+#   - 返回 root，不是 result
+
+class Solution(object):
+    def connect(self, root):
+        # 在这里从零写 connect
+        pass
+
+# === 第18题：二叉树层序遍历（#102） ===
+# 题目：从上到下、从左到右，按层返回节点值（二维列表）
+# 易错点：
+#   - deque([root]) 要加中括号
+#   - size = len(queue) 在 for 外记录
+#   - popleft() 不是 pop()
+#   - 空树返回 []
+
+class Solution(object):
+    def levelOrder(self, root):
+        # 在这里从零写 levelOrder
+        pass
