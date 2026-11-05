@@ -412,13 +412,30 @@ class Solution(object):
 # 题目：完美二叉树，每个节点的 next 指向同层右边的节点
 # 易错点：
 #   - level 存节点，不是值（level.append(node)）
-#   - for i in range(len(level)-1): level[i].next = level[i+1]
+#   - 
 #   - 返回 root，不是 result
-
+from collections import deque
 class Solution(object):
     def connect(self, root):
-        # 在这里从零写 connect
-        pass
+        
+        if not root:
+            return root
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            for i in range(len(level)-1):
+                level[i].next = level[i+1]
+        return root
 
 # === 第18题：二叉树层序遍历（#102） ===
 # 题目：从上到下、从左到右，按层返回节点值（二维列表）
@@ -427,8 +444,46 @@ class Solution(object):
 #   - size = len(queue) 在 for 外记录
 #   - popleft() 不是 pop()
 #   - 空树返回 []
-
+from collections import deque
 class Solution(object):
     def levelOrder(self, root):
-        # 在这里从零写 levelOrder
+        result = []
+        if not root:
+            return result
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level)
+        return result
+
+# === 第19题：填充next指针II（#117） ===
+# 题目：普通二叉树，每个节点的 next 指向同层右边的节点
+# 易错点：
+#   - 同 #116，level 存节点不是值
+#   - 返回 root
+
+class Solution(object):
+    def connect(self, root):
+        # 在这里从零写 connect
+        pass
+
+# === 第20题：二叉树右视图（#199） ===
+# 题目：站在二叉树右边看，能看到的节点值（从上到下）
+# 易错点：
+#   - 层序遍历每层取 level[-1]
+#   - 空树返回 []
+
+class Solution(object):
+    def rightSideView(self, root):
+        # 在这里从零写 rightSideView
         pass
