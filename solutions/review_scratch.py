@@ -471,19 +471,103 @@ class Solution(object):
 # 易错点：
 #   - 同 #116，level 存节点不是值
 #   - 返回 root
-
+from collections import deque
 class Solution(object):
     def connect(self, root):
-        # 在这里从零写 connect
-        pass
+        
+        if not root:
+            return root
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            for i in range(len(level)-1):
+                level[i].next = level[i+1]
+        return root
+
 
 # === 第20题：二叉树右视图（#199） ===
 # 题目：站在二叉树右边看，能看到的节点值（从上到下）
 # 易错点：
 #   - 层序遍历每层取 level[-1]
 #   - 空树返回 []
-
+from collections import deque
 class Solution(object):
     def rightSideView(self, root):
-        # 在这里从零写 rightSideView
+        result = []
+        if not root:
+            return result
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level[-1])
+        return result
+
+# === 第21题：二叉树最大深度（#104） ===
+# 题目：二叉树的最大深度（根到最远叶子）
+# 易错点：
+#   - 递归：max(左, 右) + 1
+#   - 基准：if not root: return 0
+
+class Solution(object):
+    def maxDepth(self, root):
+        if not root:
+            return 0
+        return max(self.maxDepth(root.left),self.maxDepth(root.right))+1
+
+# === 第22题：填充next指针II（#117） ===
+# 题目：普通二叉树，每个节点的 next 指向同层右边的节点
+# 易错点：
+#   - 同 #116，level 存节点不是值
+#   - 返回 root
+from collections import deque
+class Solution(object):
+    def connect(self, root):
+        if not root:
+            return root
+        queue = deque()
+        queue.append(root)
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            for i in range(len(level)-1):
+                level[i].next = level[i+1]
+        return root
+
+# === 第23题：二叉树的最小深度（#111） ===
+# 题目：给定二叉树，返回最小深度（根到最近叶子节点的节点数）
+# 易错点：
+#   - 一边子树为空时，不能算 0，要走另一边
+#   - 只有左右都有时，才取 min(左, 右)
+#   - 叶子节点：if not root.left and not root.right: return 1
+
+class Solution(object):
+    def minDepth(self, root):
+        # 在这里默写
         pass
