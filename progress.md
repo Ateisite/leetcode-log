@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 46    | 32   | 14     | 0    |
+| 47    | 33   | 14     | 0    |
 
 ---
 
@@ -95,6 +95,14 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 117 | Populating Next Right Pointers in Each Node II | Medium | Binary Tree, BFS | 5 min | ✅ |
+
+---
+
+## 2026-11-07
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 226 | Invert Binary Tree | Easy | Binary Tree, DFS | 10 min | ✅ |
 
 ---
 

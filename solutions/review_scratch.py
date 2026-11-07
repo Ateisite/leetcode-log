@@ -594,5 +594,35 @@ class Solution(object):
 from collections import deque
 class Solution(object):
     def averageOfLevels(self, root):
+        result = []
+        if not root:
+            return result
+        queue=deque()
+        queue.append(root)
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            average = sum(level)/len(level)
+            result.append(average)
+        return result
+
+# === 第25题：翻转二叉树（#226） ===
+# 题目：给定二叉树，翻转它（每个节点的左右子树互换）
+# 示例：[4,2,7,1,3,6,9] → [4,7,2,9,6,3,1]
+# 易错点：
+#   - 交换的是左右子树，不是节点的值
+#   - root.left, root.right = root.right, root.left 一行搞定
+#   - 递归：先交换再递归，或先递归再交换都行
+#   - 空树返回 None
+
+class Solution(object):
+    def invertTree(self, root):
         # 在这里默写
         pass
