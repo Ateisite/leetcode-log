@@ -329,10 +329,12 @@ class Solution(object):
         return result
 
 # === 第14题：二叉树层平均值（#637） ===
-# 题目：每层节点的平均值
+# 题目：给定二叉树，返回每层节点值的平均值（列表）
+# 示例：[3,9,20,null,null,15,7] → [3, 14.5, 11]
 # 易错点：
 #   - popleft() 别忘括号
 #   - 除以 len(level) 不是 len(queue)
+#   - average 放在 for 循环外面，和 result.append 同级
 #   - Python 2 整数除法问题（选 Python 3 提交）
 from collections import deque
 class Solution(object):
@@ -562,12 +564,35 @@ class Solution(object):
 
 # === 第23题：二叉树的最小深度（#111） ===
 # 题目：给定二叉树，返回最小深度（根到最近叶子节点的节点数）
+# 示例：[3,9,20,null,null,15,7] → 2；[1,null,2] → 2（不能算左边空的0）
 # 易错点：
-#   - 一边子树为空时，不能算 0，要走另一边
-#   - 只有左右都有时，才取 min(左, 右)
-#   - 叶子节点：if not root.left and not root.right: return 1
+#   - 一边子树为空时，不能算 0，要走另一边！
+#   - 先算左右，再判断谁是 0；两边都有才取 min
+#   - 只有 not root.left and not root.right 才是叶子
 
 class Solution(object):
     def minDepth(self, root):
+        if not root:
+            return 0
+
+        left =  self.minDepth(root.left)
+        right = self.minDepth(root.right)
+        if left == 0:
+            return right+1
+        if right == 0:
+            return left +1
+        return min(left,right)+1
+
+# === 第24题：二叉树层平均值（#637） ===
+# 题目：给定二叉树，返回每层节点值的平均值（列表）
+# 示例：[3,9,20,null,null,15,7] → [3, 14.5, 11]
+# 易错点：
+#   - popleft() 别忘括号
+#   - 除以 len(level) 不是 len(queue)
+#   - average 放在 for 循环外面，和 result.append 同级
+#   - Python 2 整数除法问题（选 Python 3 提交）
+from collections import deque
+class Solution(object):
+    def averageOfLevels(self, root):
         # 在这里默写
         pass
