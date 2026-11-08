@@ -624,8 +624,14 @@ class Solution(object):
 
 class Solution(object):
     def invertTree(self, root):
-        # 在这里默写
-        pass
+        def reverse(root):
+            if not root:
+                return root
+            root.left,root.right = root.right,root.left
+            reverse(root.left)
+            reverse(root.right)
+        reverse(root)
+        return root
 
 # === 第26题：二叉树最大深度（#104） ===
 # 题目：给定二叉树，返回最大深度（根到最远叶子节点的节点数）
@@ -637,4 +643,6 @@ class Solution(object):
 class Solution(object):
     def maxDepth(self, root):
         # 在这里默写
-        pass
+        if not root:
+            return 0
+        return max(self.maxDepth(root.left),self.maxDepth(root.right))+1
