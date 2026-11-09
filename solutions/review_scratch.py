@@ -646,3 +646,43 @@ class Solution(object):
         if not root:
             return 0
         return max(self.maxDepth(root.left),self.maxDepth(root.right))+1
+
+# === 第27题：对称二叉树（#101） ===
+# 题目：判断二叉树是否镜像对称
+# 示例：[1,2,2,3,4,4,3] → True；[1,2,2,null,3,null,3] → False
+# 易错点：
+#   - 辅助函数 compare(left, right) 比较两个子树
+#   - 左的左 vs 右的右，左的右 vs 右的左
+#   - 两个都空→True，一个空→False，值不等→False
+class Solution(object):
+    def isSymmetric(self, root):
+        def compare(left,right):
+            if not left and not right:
+                return True
+            if not left or not right:
+                return False
+            if left.val != right.val:
+                return False
+            return compare(left.left,right.right) and compare(left.right,right.left)
+        return compare(root.left,root.right)
+
+# === 第28题：二叉树最小深度（#111） ===
+# 题目：给定二叉树，返回最小深度（根到最近叶子节点的节点数）
+# 示例：[3,9,20,null,null,15,7] → 2；[1,null,2] → 2（不能算左边空的0）
+# 易错点：
+#   - 一边子树为空时，不能算 0，要走另一边！
+#   - 先算左右，再判断谁是 0；两边都有才取 min
+#   - 只有 not root.left and not root.right 才是叶子
+class Solution(object):
+    def minDepth(self, root):
+        if not root:
+            return 0
+        left = self.minDepth(root.left)
+        right = self.minDepth(root.right)
+        if not left:
+            return right+1
+        if not right:
+            return left + 1
+        if left and right:
+            return min(right,left)+1
+        
