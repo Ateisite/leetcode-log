@@ -685,4 +685,29 @@ class Solution(object):
             return left + 1
         if left and right:
             return min(right,left)+1
+
+# === 第29题：完全二叉树节点数（#222） ===
+# 题目：给定完全二叉树，返回节点个数
+# 示例：[1,2,3,4,5,6] → 6
+# 易错点：
+#   - 求最左深度（一直往左）和最右深度（一直往右）
+#   - 相等 → 满二叉树，返回 2^h - 1
+#   - 不等 → 递归 1 + 左 + 右
+class Solution(object):
+    def countNodes(self, root):
+        # 在这里默写
+        pass
+
+# === 第30题：翻转二叉树（#226） ===
+# 题目：给定二叉树，翻转它（每个节点的左右子树互换）
+# 示例：[4,2,7,1,3,6,9] → [4,7,2,9,6,3,1]
+# 易错点：
+#   - 交换的是左右子树，不是节点的值
+#   - root.left, root.right = root.right, root.left 一行搞定
+#   - 递归：先交换再递归，或先递归再交换都行
+#   - 空树返回 None
+class Solution(object):
+    def invertTree(self, root):
+        # 在这里默写
+        pass
         
