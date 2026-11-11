@@ -695,8 +695,27 @@ class Solution(object):
 #   - 不等 → 递归 1 + 左 + 右
 class Solution(object):
     def countNodes(self, root):
-        # 在这里默写
-        pass
+        if not root:
+            return 0
+        node = root
+        depth_left = 0
+        while node:            
+            depth_left +=1
+            node = node.left
+
+        node = root
+        depth_right = 0
+        while node:      
+            
+            depth_right +=1
+            node = node.right
+
+        if depth_left==depth_right:
+            return 2**depth_left-1
+
+        return self.countNodes(root.left)+self.countNodes(root.right)+1
+        
+            
 
 # === 第30题：翻转二叉树（#226） ===
 # 题目：给定二叉树，翻转它（每个节点的左右子树互换）
@@ -708,6 +727,37 @@ class Solution(object):
 #   - 空树返回 None
 class Solution(object):
     def invertTree(self, root):
+        if not root:
+            return None
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        return root
+
+# === 第31题：平衡二叉树（#110） ===
+# 题目：判断二叉树是否平衡（每个节点左右高度差≤1）
+# 示例：[3,9,20,null,null,15,7] → True
+# 易错点：
+#   - check返回高度，不平衡返回-1
+#   - 空树返回0（不是True/False）
+#   - 主函数判断 check(root) != -1
+class Solution(object):
+    def isBalanced(self, root):
         # 在这里默写
         pass
+
+# === 第32题：对称二叉树（#101） ===
+# 题目：判断二叉树是否镜像对称
+# 示例：[1,2,2,3,4,4,3] → True；[1,2,2,null,3,null,3] → False
+# 易错点：
+#   - 辅助函数 compare(left, right) 比较两个子树
+#   - 左的左 vs 右的右，左的右 vs 右的左
+#   - 两个都空→True，一个空→False，值不等→False
+class Solution(object):
+    def isSymmetric(self, root):
+        # 在这里默写
+        pass
+        
+
+        
         
