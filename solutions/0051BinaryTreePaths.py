@@ -22,10 +22,32 @@ https://leetcode.cn/problems/binary-tree-paths/
   4. 回溯：每次递归要复制路径，不要共享同一个列表
 
 思路：DFS 递归 + 路径记录（回溯）
+
+Idea:
+  DFS 遍历，每到一个节点就加入路径，叶子节点记录完整路径。
+  回溯：递归结束后 path.pop()，撤销选择。
+
+Complexity:
+  Time: O(n) — 每个节点访问一次
+  Space: O(h) — 递归栈深度
+
+Submission Log:
+  2026-11-11: 首次提交，一次 AC
 """
 
 
 class Solution(object):
     def binaryTreePaths(self, root):
-        # 在这里写代码
-        pass
+        result = []
+        def dfs(node,path):
+          if not node:
+              return 
+          path.append(str(node.val))
+          if not node.left and not node.right:
+              result.append("->".join(path))
+          dfs(node.left,path)
+          dfs(node.right,path)
+
+          path.pop()
+        dfs(root,[])
+        return result
