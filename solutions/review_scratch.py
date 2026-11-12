@@ -743,8 +743,18 @@ class Solution(object):
 #   - 主函数判断 check(root) != -1
 class Solution(object):
     def isBalanced(self, root):
-        # 在这里默写
-        pass
+        def check(root):
+            if not root:
+                return 0
+            left = check(root.left)
+            right = check(root.right)
+            if left == -1 or right == -1:
+                return -1
+            if abs(left-right) > 1:
+                return -1
+            else:
+                return max(left,right)+1
+        return check(root) != -1
 
 # === 第32题：对称二叉树（#101） ===
 # 题目：判断二叉树是否镜像对称
@@ -755,8 +765,72 @@ class Solution(object):
 #   - 两个都空→True，一个空→False，值不等→False
 class Solution(object):
     def isSymmetric(self, root):
-        # 在这里默写
-        pass
+        def compare(left,right):
+            if not left and not right:
+                return True
+            elif left or right:
+                return False
+            elif left.val != right.val:
+                return False
+            return compare(left.left,right.right) and compare(left.right,right.left)
+        return compare(root.left,root.right)
+
+# === 第33题：二叉树所有路径（#257） ===
+# 题目：返回所有从根到叶子的路径，用"->"连接
+# 示例：[1,2,3,null,5] → ["1->2->5", "1->3"]
+# 易错点：
+#   - 回溯：append → 递归 → pop
+#   - 叶子节点用 "->".join(path) 记录
+#   - 空树返回空列表
+class Solution(object):
+    def binaryTreePaths(self, root):
+        result = []
+        def dfs(node,path):
+            if not node:
+                return
+            path.append(str(node.val))
+            if not node.left and not node.right:
+                result.append("->".join(path))
+            dfs(node.left,path)
+            dfs(node.right,path)
+
+            path.pop()
+        dfs(root,[])
+        return result
+            
+        
+
+# === 第34题：完全二叉树节点数（#222） ===
+# 题目：给定完全二叉树，返回节点个数
+# 示例：[1,2,3,4,5,6] → 6
+# 易错点：
+#   - 求最左深度（一直往左）和最右深度（一直往右）
+#   - 相等 → 满二叉树，返回 2^h - 1
+#   - 不等 → 递归 1 + 左 + 右
+class Solution(object):
+    def countNodes(self, root):
+        if not root:
+            return 0
+
+        node = root
+        left_depth = 0
+        while node:
+            left_depth += 1
+            node = node.left
+
+        node = root
+        right_depth = 0
+        while node:
+            right_depth += 1
+            node = node.right
+
+        if left_depth == right_depth:
+            return 2**left_depth - 1
+
+        return self.countNodes(root.left)+self.countNodes(root.right)+1
+            
+
+
         
 
         
