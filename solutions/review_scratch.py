@@ -828,6 +828,30 @@ class Solution(object):
             return 2**left_depth - 1
 
         return self.countNodes(root.left)+self.countNodes(root.right)+1
+
+# === 第35题：左叶子之和（#404） ===
+# 题目：返回所有左叶子节点的值之和
+# 示例：[3,9,20,null,null,15,7] → 24（9+15）
+# 易错点：
+#   - 左叶子 = 是父节点的左孩子 + 是叶子（没子节点）
+#   - 用 is_left 参数标记是否是左孩子
+#   - 根节点不是任何节点的左孩子，传 False
+class Solution(object):
+    def sumOfLeftLeaves(self, root):
+        # 在这里默写
+        pass
+
+# === 第36题：平衡二叉树（#110） ===
+# 题目：判断二叉树是否平衡（每个节点左右高度差≤1）
+# 示例：[3,9,20,null,null,15,7] → True
+# 易错点：
+#   - check返回高度，不平衡返回-1
+#   - 空树返回0（不是True/False）
+#   - 主函数判断 check(root) != -1
+class Solution(object):
+    def isBalanced(self, root):
+        # 在这里默写
+        pass
             
 
 
