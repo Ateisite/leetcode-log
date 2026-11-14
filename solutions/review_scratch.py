@@ -838,8 +838,13 @@ class Solution(object):
 #   - 根节点不是任何节点的左孩子，传 False
 class Solution(object):
     def sumOfLeftLeaves(self, root):
-        # 在这里默写
-        pass
+        def dfs(node,is_left):
+            if not node:
+                return 0
+            if is_left and not node.left and not node.right:
+                return node.val
+            return dfs(node.left,True) + dfs(node.right,False)
+        return dfs(root,False)
 
 # === 第36题：平衡二叉树（#110） ===
 # 题目：判断二叉树是否平衡（每个节点左右高度差≤1）
@@ -850,9 +855,72 @@ class Solution(object):
 #   - 主函数判断 check(root) != -1
 class Solution(object):
     def isBalanced(self, root):
-        # 在这里默写
-        pass
-            
+        def check(node):
+            if not node:
+                return 0
+            left = check(node.left)
+            right = check(node.right)
+
+            if left == -1 or right ==-1:
+                return -1
+            if abs(left-right)>1:
+                return -1
+            return max(left,right)+1
+        return check(root) != -1
+
+# === 第37题：找树左下角值（#513） ===
+# 题目：找到二叉树最后一层最左边的节点值
+# 示例：[2,1,3] → 1；[1,2,3,4,null,5,6,null,null,7] → 7
+# 易错点：
+#   - BFS层序遍历，每层第一个节点(i==0)就是最左边
+#   - 别忘了把子节点加入队列
+#   - 最后一层循环结束时的result就是答案
+from collections import deque
+class Solution(object):
+    def findBottomLeftValue(self, root):
+        result = []
+        if not root:
+            return result
+        queue = deque()
+        queue.append(root)
+
+        while queue:
+            level = []
+            size = len(queue)
+            for _ in range(size):
+                node = queue.popleft()
+                level.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level[0])
+        return result[-1]
+
+# === 第38题：二叉树所有路径（#257） ===
+# 题目：返回所有从根到叶子的路径，用"->"连接
+# 示例：[1,2,3,null,5] → ["1->2->5", "1->3"]
+# 易错点：
+#   - 回溯：append → 递归 → pop
+#   - 叶子节点用 "->".join(path) 记录
+#   - 空树返回空列表
+class Solution(object):
+    def binaryTreePaths(self, root):
+        result = []
+        def dfs(node,path):
+            if not node:
+                return             
+            path.append(str(node.val))
+            if not node.left and not node.right:
+                result.append("->".join(path))
+            dfs(node.left,path)
+            dfs(node.right,path)
+
+            path.pop()
+        dfs(root,[])
+        return result
+
+                
 
 
         
