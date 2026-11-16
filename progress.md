@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 54    | 40   | 14     | 0    |
+| 55    | 40   | 15     | 0    |
 
 ---
 
@@ -95,6 +95,14 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 117 | Populating Next Right Pointers in Each Node II | Medium | Binary Tree, BFS | 5 min | ✅ |
+
+---
+
+## 2026-11-16
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 105 | Construct Binary Tree from Preorder and Inorder | Medium | Binary Tree, Recursion | 40 min | ✅ |
 
 ---
 
