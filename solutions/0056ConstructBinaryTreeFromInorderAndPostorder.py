@@ -21,10 +21,36 @@ https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-tr
   4. 空数组返回 None
 
 思路：和 #105 几乎一样，只是根从「前序第一个」变成「后序最后一个」
+
+Idea:
+  后序最后一个 = 根；在中序里找到根，左边左子树、右边右子树。
+  后序切分：postorder[:idx] 给左，postorder[idx:-1] 给右（去掉末尾的根）。
+  中序切分：inorder[:idx] / inorder[idx+1:]。
+
+Complexity:
+  Time: O(n²) — index() 线性查找 + 切片
+  Space: O(n) — 递归栈 + 切片
+
+Submission Log:
+  2026-11-17: 首次提交，一次 AC（right_post 边界错一次后改对）
 """
 
 
 class Solution(object):
     def buildTree(self, inorder, postorder):
-        # 在这里写代码
-        pass
+        if not inorder:
+            return None
+        root_val = postorder[-1]
+        root = TreeNode(root_val)
+        idx = inorder.index(root_val)
+        
+        left_in = inorder[0:idx]
+        right_in = inorder[idx+1:]
+
+        left_post = postorder[0:idx]
+        right_post = postorder[idx:-1]
+
+        root.left = self.buildTree(left_in,left_post)
+        root.right = self.buildTree(right_in,right_post)
+
+        return root
