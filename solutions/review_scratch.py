@@ -797,8 +797,6 @@ class Solution(object):
             path.pop()
         dfs(root,[])
         return result
-            
-        
 
 # === 第34题：完全二叉树节点数（#222） ===
 # 题目：给定完全二叉树，返回节点个数
@@ -920,10 +918,28 @@ class Solution(object):
         dfs(root,[])
         return result
 
-                
+# === 第39题：从前序与中序遍历构造二叉树（#105） ===
+# 题目：给前序 preorder 和中序 inorder，构造二叉树返回根
+# 示例：preorder=[3,9,20,15,7], inorder=[9,3,15,20,7] → [3,9,20,null,null,15,7]
+# 易错点：
+#   - 前序第一个 = 根
+#   - inorder.index(根) = 左子树节点个数 idx
+#   - 前序：preorder[1:idx+1] / preorder[idx+1:]
+#   - 中序：inorder[:idx] / inorder[idx+1:]
+#   - 空数组返回 None
+class Solution(object):
+    def buildTree(self, preorder, inorder):
+        # 在这里默写
+        pass
 
-
-        
-
-        
-        
+# === 第40题：路径总和（#112） ===
+# 题目：判断是否存在根到叶子的路径，节点和等于 targetSum
+# 示例：[5,4,8,11,null,13,4,7,2,null,null,null,1], target=22 → True
+# 易错点：
+#   - 必须到叶子节点才算
+#   - 回溯：append 和 pop 必须成对，叶子 return 前也要 pop
+#   - 返回 left or right
+class Solution(object):
+    def hasPathSum(self, root, targetSum):
+        # 在这里默写
+        pass
