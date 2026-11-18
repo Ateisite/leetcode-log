@@ -927,10 +927,33 @@ class Solution(object):
 #   - 前序：preorder[1:idx+1] / preorder[idx+1:]
 #   - 中序：inorder[:idx] / inorder[idx+1:]
 #   - 空数组返回 None
+Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 class Solution(object):
     def buildTree(self, preorder, inorder):
-        # 在这里默写
-        pass
+        if not preorder:
+            return None
+        root_val = preorder[0]
+        root = TreeNode(root_val)
+
+        idx = inorder.index(root_val)
+
+        left_pre = preorder[1:idx+1]
+        right_pre = preorder[idx+1:]
+        left_in = inorder[0:idx]
+        right_in = inorder[idx+1:]
+
+        root.left = self.buildTree(left_pre,left_in)
+        root.right = self.buildTree(right_pre,right_in)
+
+        return root
+
+
+
 
 # === 第40题：路径总和（#112） ===
 # 题目：判断是否存在根到叶子的路径，节点和等于 targetSum
@@ -941,5 +964,76 @@ class Solution(object):
 #   - 返回 left or right
 class Solution(object):
     def hasPathSum(self, root, targetSum):
-        # 在这里默写
-        pass
+        if not root:
+            return False
+        def dfs(node,path):
+            if not node:
+                return False
+            path.append(node.val)
+            if not node.left and not node.right:
+                res = (sum(path) == targetSum)
+                path.pop()
+                return res
+
+            left = dfs(node.left,path)
+            right = dfs(node.right,path)
+            path.pop()
+            return left or right
+
+        return dfs(root,[])
+
+# === 第41题：从中序与后序遍历构造二叉树（#106） ===
+# 题目：给中序 inorder 和后序 postorder，构造二叉树返回根
+# 示例：inorder=[9,3,15,20,7], postorder=[9,15,7,20,3] → [3,9,20,null,null,15,7]
+# 易错点：
+#   - 后序「左→右→根」，最后一个是根
+#   - inorder.index(根)=左子树大小 idx
+#   - 后序：postorder[:idx] / postorder[idx:-1]（右子树别带根）
+#   - 中序：inorder[:idx] / inorder[idx+1:]
+class Solution(object):
+    def buildTree(self, inorder, postorder):
+        if not inorder:
+            return None
+        root_val = postorder[-1]
+        root = TreeNode(root_val)
+
+        idx = inorder.index(root_val)
+
+        left_in = inorder[:idx]
+        right_in = inorder[idx+1:]
+
+        left_post = postorder[:idx]
+        right_post = postorder[idx:-1]
+
+        root.left = self.buildTree(left_in,left_post)
+        root.right = self.buildTree(right_in,right_post)
+
+        return root
+# === 第42题：二叉树所有路径（#257） ===
+# 题目：返回所有从根到叶子的路径，用"->"连接
+# 示例：[1,2,3,null,5] → ["1->2->5", "1->3"]
+# 易错点：
+#   - 回溯：append → 递归 → pop
+#   - 叶子节点用 "->".join(path) 记录
+#   - 空树返回空列表
+class Solution(object):
+    def binaryTreePaths(self, root):
+        if not root:
+            return []
+        result = []
+        def dfs(node,path):
+            if not node:
+                return 
+            path.append(str(node.val))
+            if not node.left and not node.right:
+                result.append("->".join(path))
+                
+            dfs(node.left,path)
+            dfs(node.right,path)
+            path.pop()
+        dfs(root,[])
+        return result
+            
+            
+
+
