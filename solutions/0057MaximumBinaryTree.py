@@ -25,10 +25,34 @@ https://leetcode.cn/problems/maximum-binary-tree/
   3. 空数组返回 None
 
 思路：和 #105/#106 一个套路 —— 找根，切两刀，递归
+
+Idea:
+  数组里的最大值当根，下标 idx 左边给左子树、右边给右子树，递归。
+  嵌套函数 findmax 直接调用（不用 self）。
+
+Complexity:
+  Time: O(n²) — 每层 max() + index() 都是 O(n)
+  Space: O(n) — 递归栈
+
+Submission Log:
+  2026-11-18: 首次提交，一次 AC
 """
 
 
 class Solution(object):
     def constructMaximumBinaryTree(self, nums):
-        # 在这里写代码
-        pass
+        if not nums:
+            return None
+        def findmax(nums):
+            if not nums:
+              return None
+            root_val = max(nums)
+            root = TreeNode(root_val)
+            idx = nums.index(root_val)
+            left = nums[:idx]
+            right = nums[idx+1:]
+            root.left = findmax(left)
+            root.right = findmax(right)
+            return root
+            
+        return findmax(nums)
