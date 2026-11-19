@@ -32,10 +32,29 @@ https://leetcode.cn/problems/merge-two-binary-trees/
   4. 递归左右子树
 
 思路：DFS 递归，同时遍历两棵树
+
+Idea:
+  四种情况：都空→None；只一边有→返回那一边；
+  都有→新建节点值相加，递归左右。
+
+Complexity:
+  Time: O(min(m,n)) — 遍历重叠部分
+  Space: O(h) — 递归栈
+
+Submission Log:
+  2026-11-19: 首次提交，一次 AC（roo1 拼写错一次后改对）
 """
 
 
 class Solution(object):
     def mergeTrees(self, root1, root2):
-        # 在这里写代码
-        pass
+        if not root1 and not root2:
+            return None
+        if not root1:
+            return root2
+        if not root2:
+            return root1
+        root =  TreeNode(root1.val+root2.val)
+        root.left = self.mergeTrees(root1.left,root2.left)
+        root.right = self.mergeTrees(root1.right,root2.right)
+        return root 
