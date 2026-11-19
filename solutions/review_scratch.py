@@ -1033,6 +1033,31 @@ class Solution(object):
             path.pop()
         dfs(root,[])
         return result
+
+# === 第43题：最大二叉树（#654） ===
+# 题目：给不重复数组 nums，最大值当根，左右分别递归构造最大二叉树
+# 示例：[3,2,1,6,0,5] → [6,3,5,null,2,0,null,null,1]
+# 易错点：
+#   - max(nums) 是根，nums.index(max_val) 切两刀
+#   - 嵌套函数直接调用，别加 self
+#   - 空数组返回 None（内层也要判）
+class Solution(object):
+    def constructMaximumBinaryTree(self, nums):
+        # 在这里默写
+        pass
+
+# === 第44题：从前序与中序遍历构造二叉树（#105） ===
+# 题目：给前序 preorder 和中序 inorder，构造二叉树返回根
+# 示例：preorder=[3,9,20,15,7], inorder=[9,3,15,20,7] → [3,9,20,null,null,15,7]
+# 易错点：
+#   - 前序第一个 = 根
+#   - inorder.index(根) = 左子树节点个数 idx
+#   - 前序：preorder[1:idx+1] / preorder[idx+1:]
+#   - 中序：inorder[:idx] / inorder[idx+1:]
+class Solution(object):
+    def buildTree(self, preorder, inorder):
+        # 在这里默写
+        pass
             
             
 
