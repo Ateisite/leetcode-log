@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 58    | 41   | 17     | 0    |
+| 59    | 42   | 17     | 0    |
 
 ---
 
@@ -103,6 +103,7 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 617 | Merge Two Binary Trees | Easy | Binary Tree, DFS | 15 min | ✅ |
+| 700 | Search in a Binary Search Tree | Easy | Binary Tree, BST | 15 min | ✅ |
 
 ---
 

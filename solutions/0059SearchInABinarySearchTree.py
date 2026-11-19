@@ -24,10 +24,28 @@ https://leetcode.cn/problems/search-in-a-binary-search-tree/
   5. 走到空还没找到 → 返回 None
 
 思路：递归，每次只走一边（这就是 BST 搜索快的原因）
+
+Idea:
+  BST 左小右大：val < root.val 往左，val > root.val 往右，
+  相等就返回该节点，走到空返回 None。
+
+Complexity:
+  Time: O(h) — h 为树高，BST 平均 O(log n)，最坏 O(n)
+  Space: O(h) — 递归栈
+
+Submission Log:
+  2026-11-19: 首次提交，一次 AC（补 11-15 的课）
 """
 
 
 class Solution(object):
     def searchBST(self, root, val):
-        # 在这里写代码
-        pass
+        if not root:
+            return None
+        if root.val == val:
+            return root
+        if root.val > val:
+            return self.searchBST(root.left,val)
+        if root.val < val:
+            return self.searchBST(root.right,val)
+        
