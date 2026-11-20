@@ -23,10 +23,30 @@ https://leetcode.cn/problems/validate-binary-search-tree/
   3. 左孩子：上界变成当前节点值；右孩子：下界变成当前节点值
 
 思路：DFS 递归，带上下界
+
+Idea:
+  check(node, low, high)：每个节点必须落在 (low, high) 内。
+  左孩子上界收紧成 node.val，右孩子下界收紧成 node.val。
+  初始边界用正负无穷。
+
+Complexity:
+  Time: O(n) — 每个节点访问一次
+  Space: O(h) — 递归栈
+
+Submission Log:
+  2026-11-20: 首次提交，一次 AC（右子树写成left、初始边界写错，改后通过）
 """
 
 
 class Solution(object):
     def isValidBST(self, root):
-        # 在这里写代码
-        pass
+        if not root:
+            return True
+        def check(node,low,high):
+            if not node:
+                return True
+            if not (low<node.val<high):
+                return False
+            return check(node.left,low,node.val) and check(node.right,node.val,high)
+        return check(root,float('-inf'), float('inf'))
+            
