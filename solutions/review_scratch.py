@@ -1043,8 +1043,21 @@ class Solution(object):
 #   - 空数组返回 None（内层也要判）
 class Solution(object):
     def constructMaximumBinaryTree(self, nums):
-        # 在这里默写
-        pass
+        if not nums:
+            return None
+        def findmax(nums):
+            if not nums:
+                return None
+            root_val = max(nums)
+            root = TreeNode(root_val)
+
+            idx = nums.index(root_val)
+            left = nums[:idx]
+            right = nums[idx+1:]
+            root.left = findmax(left)
+            root.right = findmax(right)
+            return root
+        return findmax(nums)
 
 # === 第44题：从前序与中序遍历构造二叉树（#105） ===
 # 题目：给前序 preorder 和中序 inorder，构造二叉树返回根
@@ -1056,9 +1069,45 @@ class Solution(object):
 #   - 中序：inorder[:idx] / inorder[idx+1:]
 class Solution(object):
     def buildTree(self, preorder, inorder):
+        if not preorder:
+            return None
+        root_val = preorder[0]
+        root = TreeNode(root_val)
+        idx = inorder.index(root_val)
+
+        left_pre = preorder[1:idx+1]
+        right_pre = preorder[idx+1:]
+        left_in = inorder[0:idx]
+        right_in = inorder[idx+1:]
+
+        root.left = self.buildTree(left_pre,left_in)
+        root.right = self.buildTree(right_pre,right_in)
+
+        return root
+
+# === 第45题：合并二叉树（#617） ===
+# 题目：两棵二叉树合并，重叠的节点值相加
+# 示例：root1=[1,3,2,5], root2=[2,1,3,null,4,null,7] → [3,4,5,5,4,null,7]
+# 易错点：
+#   - 都空 → None
+#   - 只一边有 → 直接返回那一边（不用新建）
+#   - 都有 → 新建节点，值相加，递归左右
+class Solution(object):
+    def mergeTrees(self, root1, root2):
         # 在这里默写
         pass
-            
+
+# === 第46题：二叉搜索树中的搜索（#700） ===
+# 题目：在 BST 中找值为 val 的节点，返回以它为根的子树
+# 示例：root=[4,2,7,1,3], val=2 → [2,1,3]
+# 易错点：
+#   - BST 左小右大：val < root.val 往左，val > root.val 往右
+#   - 相等 → 返回该节点；走到空 → 返回 None
+#   - 每个分支都要 return
+class Solution(object):
+    def searchBST(self, root, val):
+        # 在这里默写
+        pass
             
 
 
