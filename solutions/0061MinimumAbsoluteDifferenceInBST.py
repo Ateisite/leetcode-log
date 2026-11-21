@@ -22,10 +22,35 @@ https://leetcode.cn/problems/minimum-absolute-difference-in-bst/
   3. 中序遍历：左 → 根 → 右
 
 思路：中序遍历收集所有值，再比较相邻差
+
+Idea:
+  BST 中序遍历是递增的 → 最小差一定在相邻两个节点之间。
+  中序遍历存列表，再遍历一遍比较相邻差。
+
+Complexity:
+  Time: O(n)
+  Space: O(n)
+
+Submission Log:
+  2026-11-21: 首次提交，一次 AC
 """
 
 
 class Solution(object):
     def getMinimumDifference(self, root):
-        # 在这里写代码
-        pass
+        if not root:
+            return 0
+        res = []
+        def dfs(node):
+            
+            if not node:
+                return 
+            dfs(node.left)
+            res.append(node.val)
+            dfs(node.right)
+            
+        dfs(root)
+        diff = float('inf')
+        for i in range(len(res)-1):
+            diff = min(diff,res[i+1]-res[i])
+        return diff
