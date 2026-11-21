@@ -1094,8 +1094,17 @@ class Solution(object):
 #   - 都有 → 新建节点，值相加，递归左右
 class Solution(object):
     def mergeTrees(self, root1, root2):
-        # 在这里默写
-        pass
+        if not root1 and not root2:
+            return None
+        if not root1:
+            return root2
+        if not root2:
+            return root1
+        root = TreeNode(root1.val+root2.val)
+        root.left = self.mergeTrees(root1.left,root2.left)
+        root.right = self.mergeTrees(root1.right,root2.right)
+        return root
+
 
 # === 第46题：二叉搜索树中的搜索（#700） ===
 # 题目：在 BST 中找值为 val 的节点，返回以它为根的子树
@@ -1106,8 +1115,61 @@ class Solution(object):
 #   - 每个分支都要 return
 class Solution(object):
     def searchBST(self, root, val):
-        # 在这里默写
-        pass
+        if not root:
+            return None
+        if val == root.val:
+            return root
+        if val > root.val:
+            return self.searchBST(root.right,val)
+        if val < root.val:
+            return self.searchBST(root.left,val)
+
+# === 第47题：验证二叉搜索树（#98） ===
+# 题目：判断一棵二叉树是不是合法 BST
+# 示例：[5,1,4,null,null,3,6] → False
+# 易错点：
+#   - 不能只比当前节点和左右孩子，要传上下界
+#   - 左孩子上界收紧成 node.val，右孩子下界收紧成 node.val
+#   - 初始边界用 float('-inf') / float('inf')
+class Solution(object):
+    def isValidBST(self, root):
+        if not root:
+            return True
+        def check(node,low,high):
+            if not node:
+                return True
+            if node.val > high or node.val < low:
+                return False
+            return check(node.left,low,node.val) and check(node.right,node.val,high)
+        return check(root,float('-inf'),float('inf'))
+
+# === 第48题：路径总和（#112） ===
+# 题目：判断是否存在根到叶子的路径，节点和等于 targetSum
+# 示例：[5,4,8,11,null,13,4,7,2,null,null,null,1], target=22 → True
+# 易错点：
+#   - 必须到叶子节点才算
+#   - 回溯：append 和 pop 必须成对，叶子 return 前也要 pop
+#   - 返回 left or right
+class Solution(object):
+    def hasPathSum(self, root, targetSum):
+        if not root:
+            return False
+        def dfs(node,path):
+            if not node:
+                return False
+            path.append(node.val)
             
+            if not node.left and not node.right:                
+                res = sum(path) == targetSum
+                path.pop()
+                return res
+            left = dfs(node.left,path)
+            right = dfs(node.right,path)
+            path.pop()
+            return  left or right
+            
+        return dfs(root,[])
+            
+        
 
 
