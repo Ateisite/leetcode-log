@@ -1167,8 +1167,45 @@ class Solution(object):
             right = dfs(node.right,path)
             path.pop()
             return  left or right
-            
+
         return dfs(root,[])
+
+# === 第49题：二叉搜索树的最小绝对差（#530） ===
+# 题目：返回 BST 任意两节点值之差的最小绝对值
+# 示例：[4,2,6,1,3] → 1
+# 易错点：
+#   - BST 中序遍历是递增的 → 最小差一定在相邻节点之间
+#   - 用共享列表收集，别在函数里新建列表
+#   - 用单独变量存最小差，别覆盖列表
+class Solution(object):
+    def getMinimumDifference(self, root):
+        if not root:
+            return 0
+        result = []
+        def inorder(node):
+            if not node:
+                return
+            inorder(node.left)
+            result.append(node.val)
+            inorder(node.right)
+        diff = float('inf')
+        inorder(root)
+        for i in range(len(result)-1):
+            diff = min(diff,result[i+1]-result[i])
+        return diff
+
+
+# === 第50题：合并二叉树（#617） ===
+# 题目：两棵二叉树合并，重叠的节点值相加
+# 示例：root1=[1,3,2,5], root2=[2,1,3,null,4,null,7] → [3,4,5,5,4,null,7]
+# 易错点：
+#   - 都空 → None
+#   - 只一边有 → 直接返回那一边（不用新建）
+#   - 都有 → 新建节点，值相加，递归左右
+class Solution(object):
+    def mergeTrees(self, root1, root2):
+        # 在这里默写
+        pass
             
         
 
