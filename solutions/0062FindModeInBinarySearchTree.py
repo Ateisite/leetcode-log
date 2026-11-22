@@ -20,10 +20,37 @@ https://leetcode.cn/problems/find-mode-in-binary-search-tree/
   4. 空树返回 []
 
 思路：中序遍历 + 计数（相同的值挨在一起，数起来很方便）
+
+Idea:
+  中序遍历收集所有值 → Counter 统计次数 →
+  找出最大次数 → 把所有次数等于最大次数的值收集返回。
+
+Complexity:
+  Time: O(n)
+  Space: O(n)
+
+Submission Log:
+  2026-11-22: 首次提交，一次 AC
 """
 
-
+from collections import Counter
 class Solution(object):
     def findMode(self, root):
-        # 在这里写代码
-        pass
+      if not root:
+         return []
+      result = []
+      def inorder(node):
+         if not node:
+            return None
+         inorder(node.left)
+         result.append(node.val)
+         inorder(node.right)
+      inorder(root)
+      cnt = Counter(result)
+      max_count = max(cnt.values())
+      res = []
+      for k,v in cnt.items():
+         if v == max_count:
+            res.append(k)
+      return res
+      
