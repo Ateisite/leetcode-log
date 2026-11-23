@@ -1204,9 +1204,38 @@ class Solution(object):
 #   - 都有 → 新建节点，值相加，递归左右
 class Solution(object):
     def mergeTrees(self, root1, root2):
+        if not root1 and not root2:
+            return None
+        if not root1:return root2
+        if not root2:return root1
+        root = TreeNode(root1.val + root2.val)
+        root.left = self.mergeTrees(root1.left,root2.left)
+        root.right = self.mergeTrees(root1.right,root2.right)
+        return root
+
+# === 第51题：二叉搜索树中的众数（#501） ===
+# 题目：给有重复值的 BST，返回所有众数（出现次数最多的值）
+# 示例：[1,null,2,2] → [2]
+# 易错点：
+#   - 中序遍历收集所有值，用 Counter 统计
+#   - 返回所有「次数 == 最大次数」的值
+#   - 别忘了 import: from collections import Counter
+class Solution(object):
+    def findMode(self, root):
         # 在这里默写
         pass
-            
+
+# === 第52题：验证二叉搜索树（#98） ===
+# 题目：判断一棵二叉树是不是合法 BST
+# 示例：[5,1,4,null,null,3,6] → False
+# 易错点：
+#   - 不能只比当前节点和左右孩子，要传上下界
+#   - 左孩子上界收紧成 node.val，右孩子下界收紧成 node.val
+#   - 初始边界用 float('-inf') / float('inf')
+class Solution(object):
+    def isValidBST(self, root):
+        # 在这里默写
+        pass    
         
 
 
