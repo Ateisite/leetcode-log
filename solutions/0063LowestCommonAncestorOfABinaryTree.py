@@ -27,10 +27,28 @@ https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/
   4. 用「左右各找到什么」来判断
 
 思路：DFS 递归，看左右子树各能找到什么
+
+Idea:
+  递归返回「这棵子树里找到 p/q 的情况」：找到返回节点，没找到返回 None。
+  基准：空 或 当前节点就是 p/q → 返回当前节点。
+  左右都非空 → 当前节点就是 LCA；只有一边非空 → 往上传；都没有 → None。
+  自底向上汇报，所以第一个「两边都有」的节点就是最近的。
+
+Complexity:
+  Time: O(n) — 最坏遍历整棵树
+  Space: O(h) — 递归栈
+
+Submission Log:
+  2026-11-23: 首次提交，一次 AC
 """
 
 
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
-        # 在这里写代码
-        pass
+        if not root or root == p or root == q:
+            return root
+        left = self.lowestCommonAncestor(root.left,p,q)
+        right = self.lowestCommonAncestor(root.right,p,q)
+        if left and right:
+            return root
+        return left if left else right
