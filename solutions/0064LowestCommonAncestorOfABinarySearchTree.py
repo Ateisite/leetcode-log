@@ -24,10 +24,28 @@ https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/
   4. 否则（分居两侧，或其中一个就是 root）→ root 就是 LCA
 
 思路：利用 BST 左小右大，每次淘汰一半
+
+Idea:
+  p、q 都小于 root → LCA 在左子树；
+  p、q 都大于 root → LCA 在右子树；
+  否则（分居两侧，或其中一个就是 root）→ root 就是 LCA。
+  只走一边，比 #236 快。
+
+Complexity:
+  Time: O(h) — 只走一条路径
+  Space: O(h) — 递归栈
+
+Submission Log:
+  2026-11-24: 首次提交，一次 AC
 """
 
 
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
-        # 在这里写代码
-        pass
+        if not root or root.val == p or root.val == q:
+            return root
+        if p.val > root.val and q.val > root.val:
+            return self.lowestCommonAncestor(root.right,p,q)
+        if p.val < root.val and q.val < root.val:
+            return self.lowestCommonAncestor(root.left,p,q)
+        return root

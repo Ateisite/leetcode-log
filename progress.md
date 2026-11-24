@@ -6,7 +6,7 @@
 
 | Total | Easy | Medium | Hard |
 |-------|------|--------|------|
-| 63    | 44   | 19     | 0    |
+| 64    | 44   | 20     | 0    |
 
 ---
 
@@ -95,6 +95,14 @@
 | # | Title | Difficulty | Topics | Time | Status |
 |---|-------|------------|--------|------|--------|
 | 117 | Populating Next Right Pointers in Each Node II | Medium | Binary Tree, BFS | 5 min | ✅ |
+
+---
+
+## 2026-11-24
+
+| # | Title | Difficulty | Topics | Time | Status |
+|---|-------|------------|--------|------|--------|
+| 235 | Lowest Common Ancestor of a BST | Medium | Binary Tree, BST | 20 min | ✅ |
 
 ---
 
