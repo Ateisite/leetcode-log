@@ -1220,10 +1220,30 @@ class Solution(object):
 #   - 中序遍历收集所有值，用 Counter 统计
 #   - 返回所有「次数 == 最大次数」的值
 #   - 别忘了 import: from collections import Counter
+from collections import Counter
 class Solution(object):
     def findMode(self, root):
         # 在这里默写
-        pass
+        if not root:
+            return []
+        result = []
+        def inorder(node):
+           if not node:
+               return
+           inorder(node.left)
+           result.append(node.val)
+           inorder(node.right)
+        inorder(root)
+        answer = []
+        res = Counter(result)
+        max_count = max(res.values())
+        for k,v in res.items():
+            if v == max_count:
+                answer.append(k)
+        return answer
+
+        
+         
 
 # === 第52题：验证二叉搜索树（#98） ===
 # 题目：判断一棵二叉树是不是合法 BST
@@ -1234,8 +1254,44 @@ class Solution(object):
 #   - 初始边界用 float('-inf') / float('inf')
 class Solution(object):
     def isValidBST(self, root):
+        if not root:
+            return True
+        def check(node,low,high):
+            if not node:
+                return True
+            if not (low < node.val < high):
+                return False
+            left = check(node.left,low,node.val)
+            right = check(node.right,node.val,high)
+            return left and right
+        return check(root,float('-inf'),float('inf'))
+
+# === 第53题：二叉树的最近公共祖先（#236） ===
+# 题目：给节点 p、q，找它们的最近公共祖先（LCA）
+# 示例：root=[3,5,1,6,2,0,8,null,null,7,4], p=5, q=1 → 3
+# 易错点：
+#   - 基准：空 或 当前节点是 p/q → 返回当前节点
+#   - 左右都非空 → 当前节点就是 LCA
+#   - 只有一边非空 → 把那一边传上去
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
         # 在这里默写
-        pass    
+        pass
+
+# === 第54题：二叉搜索树中的搜索（#700） ===
+# 题目：在 BST 中找值为 val 的节点，返回以它为根的子树
+# 示例：root=[4,2,7,1,3], val=2 → [2,1,3]
+# 易错点：
+#   - BST 左小右大：val < root.val 往左，val > root.val 往右
+#   - 相等 → 返回该节点；走到空 → 返回 None
+#   - 每个分支都要 return，参数别漏 val
+class Solution(object):
+    def searchBST(self, root, val):
+        # 在这里默写
+        pass
+
+
+
         
 
 
