@@ -23,10 +23,26 @@ https://leetcode.cn/problems/insert-into-a-binary-search-tree/
   4. 最后返回 root
 
 思路：递归往下找空位，找到就插入
+
+Idea:
+  空节点 = 插入位置 → 新建节点返回；
+  否则按大小往左/右走，递归结果接回 root.left / root.right。
+
+Complexity:
+  Time: O(h)
+  Space: O(h)
+
+Submission Log:
+  2026-11-25: 首次提交，一次 AC
 """
 
 
 class Solution(object):
     def insertIntoBST(self, root, val):
-        # 在这里写代码
-        pass
+        if not root:
+            return TreeNode(val)
+        if root.val > val:
+            root.left = self.insertIntoBST(root.left,val)
+        if root.val < val:
+            root.right = self.insertIntoBST(root.right,val)
+        return root

@@ -42,7 +42,7 @@ Submission Log:
 
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
-        if not root or root.val == p or root.val == q:
+        if not root or root == p or root == q:
             return root
         if p.val > root.val and q.val > root.val:
             return self.lowestCommonAncestor(root.right,p,q)
