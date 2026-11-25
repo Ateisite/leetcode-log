@@ -1275,8 +1275,14 @@ class Solution(object):
 #   - 只有一边非空 → 把那一边传上去
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
-        # 在这里默写
-        pass
+        if not root or root == p or root == q:
+            return root
+        left = self.lowestCommonAncestor(root.left,p,q)
+        right = self.lowestCommonAncestor(root.right,p,q)
+        if left and right:
+            return root
+        return left if left else right
+        
 
 # === 第54题：二叉搜索树中的搜索（#700） ===
 # 题目：在 BST 中找值为 val 的节点，返回以它为根的子树
@@ -1287,8 +1293,37 @@ class Solution(object):
 #   - 每个分支都要 return，参数别漏 val
 class Solution(object):
     def searchBST(self, root, val):
+        if not root or root.val == val:
+            return root
+        if val > root.val:
+           return self.searchBST(root.right,val)
+        elif val < root.val:
+           return self.searchBST(root.left,val)
+
+# === 第55题：二叉搜索树的最近公共祖先（#235） ===
+# 题目：给 BST 和节点 p、q，找最近公共祖先
+# 示例：root=[6,2,8,0,4,7,9,null,null,3,5], p=2, q=8 → 6
+# 易错点：
+#   - p、q 是节点，比较用 p.val / q.val
+#   - 都小于 root → 往左；都大于 root → 往右
+#   - 否则（分居两侧）→ root 就是 LCA
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
         # 在这里默写
         pass
+
+# === 第56题：二叉搜索树中的众数（#501） ===
+# 题目：给有重复值的 BST，返回所有众数
+# 示例：[1,null,2,2] → [2]
+# 易错点：
+#   - 中序遍历收集所有值，用 Counter 统计
+#   - 返回所有「次数 == 最大次数」的值
+#   - 别忘了 from collections import Counter
+class Solution(object):
+    def findMode(self, root):
+        # 在这里默写
+        pass
+
 
 
 
