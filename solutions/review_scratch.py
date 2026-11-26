@@ -1309,8 +1309,14 @@ class Solution(object):
 #   - 否则（分居两侧）→ root 就是 LCA
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
-        # 在这里默写
-        pass
+        if not root or root == p or root == q:
+            return root
+        if root.val > p.val and root.val > q.val:
+            return self.lowestCommonAncestor(root.left,p,q)
+        if root.val < p.val and root.val < q.val:
+            return self.lowestCommonAncestor(root.right,p,q)
+        return root
+        
 
 # === 第56题：二叉搜索树中的众数（#501） ===
 # 题目：给有重复值的 BST，返回所有众数
@@ -1319,8 +1325,48 @@ class Solution(object):
 #   - 中序遍历收集所有值，用 Counter 统计
 #   - 返回所有「次数 == 最大次数」的值
 #   - 别忘了 from collections import Counter
+from collections import Counter
 class Solution(object):
     def findMode(self, root):
+        if not root:
+            return []
+        vals = []
+        def inorder(root):
+            if not root:
+                return
+            inorder(root.left)
+            vals.append(root.val)
+            inorder(root.right)
+        inorder(root)
+        result = Counter(vals)
+        max_val = max(result.values())
+        res = []
+        for k,v in result.items():
+            if v==max_val:
+                res.append(k)
+        return res
+
+# === 第57题：二叉搜索树中的插入操作（#701） ===
+# 题目：往 BST 插入一个值，返回根节点
+# 示例：root=[4,2,7,1,3], val=5 → [4,2,7,1,3,5]
+# 易错点：
+#   - 空节点 = 插入位置 → 新建节点返回
+#   - val < root.val 往左，> 往右
+#   - 递归结果必须接回 root.left / root.right
+class Solution(object):
+    def insertIntoBST(self, root, val):
+        # 在这里默写
+        pass
+
+# === 第58题：二叉树的最近公共祖先（#236） ===
+# 题目：给节点 p、q，找它们的最近公共祖先（LCA）
+# 示例：root=[3,5,1,6,2,0,8,null,null,7,4], p=5, q=1 → 3
+# 易错点：
+#   - 基准：空 或 当前节点是 p/q → 返回当前节点
+#   - 左右都非空 → 当前节点就是 LCA
+#   - 只有一边非空 → 把那一边传上去
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
         # 在这里默写
         pass
 
