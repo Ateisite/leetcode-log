@@ -30,10 +30,40 @@ https://leetcode.cn/problems/delete-node-in-a-bst/
   3. 删除结果要接回 root.left / root.right
 
 思路：先找到 key，再分情况处理
+
+Idea:
+  找到 key 后分 5 种情况：没找到/叶子/只有右/只有左/两个都有。
+  两个都有：用右子树最小值覆盖当前节点，再递归删掉那个最小值。
+  递归结果必须接回 root.left/right，最后 return root。
+
+Complexity:
+  Time: O(h)
+  Space: O(h)
+
+Submission Log:
+  2026-11-26: 首次提交，一次 AC
 """
 
 
 class Solution(object):
     def deleteNode(self, root, key):
-        # 在这里写代码
-        pass
+        if not root:
+            return None
+        if root.val == key:
+            if not root.left and not root.right:
+                return None
+            if not root.left:
+                return root.right
+            if not root.right:
+                return root.left
+            min_node = root.right
+            while min_node.left:
+                min_node = min_node.left
+            root.val = min_node.val
+            root.right = self.deleteNode(root.right,min_node.val)
+            return root
+        if root.val < key:
+            root.right = self.deleteNode(root.right,key)
+        if root.val > key:
+            root.left = self.deleteNode(root.left,key)
+        return root
