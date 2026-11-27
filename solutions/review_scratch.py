@@ -1355,8 +1355,13 @@ class Solution(object):
 #   - 递归结果必须接回 root.left / root.right
 class Solution(object):
     def insertIntoBST(self, root, val):
-        # 在这里默写
-        pass
+        if not root:
+            return TreeNode(val)
+        if root.val > val:
+            root.left = self.insertIntoBST(root.left,val)
+        if root.val < val:
+            root.right = self.insertIntoBST(root.right,val)
+        return root
 
 # === 第58题：二叉树的最近公共祖先（#236） ===
 # 题目：给节点 p、q，找它们的最近公共祖先（LCA）
@@ -1367,12 +1372,34 @@ class Solution(object):
 #   - 只有一边非空 → 把那一边传上去
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
+        if not root or root == p or root == q:
+            return root
+        left = self.lowestCommonAncestor(root.left,p,q)
+        right = self.lowestCommonAncestor(root.right,p,q)
+        if left and right:
+            return root
+        return left if left else right
+
+# === 第59题：删除二叉搜索树中的节点（#450） ===
+# 题目：删掉 BST 中值为 key 的节点，返回根节点
+# 示例：root=[5,3,6,2,4,null,7], key=3 → [5,4,6,2,null,null,7]
+# 易错点：
+#   - 5种情况：没找到/叶子/只有右/只有左/两个都有
+#   - 两个都有：右子树最小值（一直往左）覆盖当前值，再递归删它
+#   - 递归结果接回 root.left/right，最后 return root
+class Solution(object):
+    def deleteNode(self, root, key):
         # 在这里默写
         pass
 
-
-
-
-        
-
-
+# === 第60题：二叉搜索树的最近公共祖先（#235） ===
+# 题目：给 BST 和节点 p、q，找最近公共祖先
+# 示例：root=[6,2,8,0,4,7,9,null,null,3,5], p=2, q=8 → 6
+# 易错点：
+#   - p、q 是节点，比较用 p.val / q.val
+#   - 都小于 root → 往左；都大于 root → 往右
+#   - 否则（分居两侧）→ root 就是 LCA
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        # 在这里默写
+        pass

@@ -27,10 +27,29 @@ https://leetcode.cn/problems/trim-a-binary-search-tree/
   4. 递归结果接回 root.left / root.right
 
 思路：递归，利用 BST 性质整棵子树地剪
+
+Idea:
+  根 < low → 整棵左子树都不要，看右子树；
+  根 > high → 整棵右子树都不要，看左子树；
+  在范围内 → 保留根，递归修剪左右。
+
+Complexity:
+  Time: O(n)
+  Space: O(h)
+
+Submission Log:
+  2026-11-27: 首次提交，一次 AC
 """
 
 
 class Solution(object):
     def trimBST(self, root, low, high):
-        # 在这里写代码
-        pass
+        if not root:
+            return None
+        if root.val < low:
+            return self.trimBST(root.right,low,high)
+        if root.val > high:
+            return self.trimBST(root.left,low,high)
+        root.left = self.trimBST(root.left,low,high)
+        root.right = self.trimBST(root.right,low,high)
+        return root
