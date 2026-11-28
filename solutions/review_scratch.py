@@ -1403,3 +1403,28 @@ class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
         # 在这里默写
         pass
+
+# === 第61题：修剪二叉搜索树（#669） ===
+# 题目：修剪 BST，使所有节点值都在 [low, high] 内
+# 示例：root=[1,0,2], low=1, high=2 → [1,null,2]
+# 易错点：
+#   - 根<low → 左子树全<low，扔左看右
+#   - 根>high → 右子树全>high，扔右看左
+#   - 在范围内 → 保留根，递归修剪左右
+#   - 空树返回 None（不是[]）
+class Solution(object):
+    def trimBST(self, root, low, high):
+        # 在这里默写
+        pass
+
+# === 第62题：二叉搜索树中的插入操作（#701） ===
+# 题目：往 BST 插入一个值，返回根节点
+# 示例：root=[4,2,7,1,3], val=5 → [4,2,7,1,3,5]
+# 易错点：
+#   - 空节点 = 插入位置 → 新建节点返回
+#   - val < root.val 往左，> 往右
+#   - 递归结果必须接回 root.left / root.right
+class Solution(object):
+    def insertIntoBST(self, root, val):
+        # 在这里默写
+        pass
