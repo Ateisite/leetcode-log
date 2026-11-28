@@ -23,10 +23,25 @@ https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/
   4. 空数组返回 None
 
 思路：中间元素当根，递归左右
+
+Idea:
+  取中间元素当根，左半边递归建左子树，右半边递归建右子树 → 高度平衡。
+
+Complexity:
+  Time: O(n)
+  Space: O(log n)
+
+Submission Log:
+  2026-11-28: 首次提交，一次 AC
 """
 
 
 class Solution(object):
     def sortedArrayToBST(self, nums):
-        # 在这里写代码
-        pass
+        if not nums:
+            return None
+        mid = len(nums)//2
+        root = TreeNode(nums[mid])
+        root.left = self.sortedArrayToBST(nums[:mid])
+        root.right = self.sortedArrayToBST(nums[mid+1:])
+        return root
